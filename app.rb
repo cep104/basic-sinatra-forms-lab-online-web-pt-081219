@@ -2,19 +2,20 @@ require 'sinatra/base'
 
 class App < Sinatra::Base
     get '/newteam' do 
-        puts params
         erb :newteam
     end
 
     post '/team' do 
-        @name = params["name"]
-        @team_coach = params["coach"]
-        @team_point = params["pg"]
-        @team_shoot = params["sg"]
-        @team_small = params["sf"]
-        @team_power = params["pf"]
-        @team_center = params["c"]
+        # binding.pry
+        @name = params[:name]
+        @coach = params[:coach]
+        @pg = params[:pg]
+        @sg = params[:sg]
+        @sf = params[:sf]
+        @pf = params[:pf]
+        @c = params[:c]
         erb :team
     end
+
 end
 
